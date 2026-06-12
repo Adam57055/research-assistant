@@ -8,4 +8,6 @@ class ResearchRequest(BaseModel):
     temperature: float = Field(default = 0.7, ge = 0, le = 1, description="Creativity range for research model")
     max_tokens: int = Field(default = 50, gt = 0, le = 100, description = "Max tokens user can utilize")
 
-
+@app.post("/generate")
+async def generate_text(request, ResearchRequest):
+    return{"status": "success", "received": request.prompt}
