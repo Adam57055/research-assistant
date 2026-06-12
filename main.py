@@ -11,3 +11,16 @@ class ResearchRequest(BaseModel):
 @app.post("/generate")
 async def generate_text(request, ResearchRequest):
     return{"status": "success", "received": request.prompt}
+
+# API Integration
+from openai import OpenAI
+
+client = OpenAI()
+
+response = client.chat.completions.create(
+    model = 'gpt-4o-mini',
+    messages = [
+        {
+            "role":"system",
+            "content": 'You are a helpful research assistant tasked with gaining insightful and accurate data on the user's prompt'
+        }
