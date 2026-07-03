@@ -24,6 +24,7 @@ response = client.chat.completions.create(
         {
             "role":"system",
             "content": 'You are a helpful research assistant tasked with gaining insightful and accurate data on the user's prompt',
+            "content": "Use valid JSON ONLY."
         },
         {
         "role": "user",
