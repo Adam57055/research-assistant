@@ -14,6 +14,7 @@ async def generate_text(request, ResearchRequest):
 
 # API Integration
 from openai import OpenAI
+import json 
 
 client = OpenAI()
 
